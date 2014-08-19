@@ -33,8 +33,10 @@ define(['jquery', 'less!style/spaces-component'], function($) {
         if (el.hasClass('collapsed')) {
             $('#search-spaces').focus();
             el.removeClass('collapsed');
+            $('.container').removeClass('collapsed');
         } else {
             el.addClass('collapsed');
+            $('.container').addClass('collapsed');
         }
     }
 
@@ -61,6 +63,7 @@ define(['jquery', 'less!style/spaces-component'], function($) {
         }
         
         if (ev.keyCode === 40 || ev.keyCode === 38) {
+            ev.preventDefault();
             var container = $(this),
                 currentFocus = container.find('a:focus'),
                 allItems = container.find('a:not(.hidden)'),
@@ -83,8 +86,17 @@ define(['jquery', 'less!style/spaces-component'], function($) {
     return $.fn.spaces = function(data) {
         return this.each(function() {
             var el = $(this),
-                container = $('<div class="container"/>')
-                    .appendTo(el);
+                container = $('<div class="container collapsed"/>')
+                    .appendTo($('body')),
+                results = $('<div class="results"/>');
+            
+            results.css('max-height', window.outerHeight * 0.4 + 'px');
+            $(window).on('resize', function() {
+                results.css('max-height', window.outerHeight * 0.4 + 'px');
+            });
+
+            container.css('left', el.offset().left + 'px');
+            container.css('top', (el.offset().top + el.outerHeight()) + 'px');
 
             el.addClass('spaces-component');
             el.addClass('collapsed');
@@ -97,9 +109,9 @@ define(['jquery', 'less!style/spaces-component'], function($) {
             el.click(toggleDisplay);
 
             console.log(data);
-            
+            container.append(results);
             $.each(data, function(i, organization) {
-                renderOrg(organization).appendTo(container);
+                renderOrg(organization).appendTo(results);
             });
 
         });
