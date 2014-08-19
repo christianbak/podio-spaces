@@ -1,0 +1,4 @@
+**/bower_components/**
+built.js
+built.html
+**/node_modules/**

@@ -8,11 +8,14 @@ body {
     height: 56px;
     box-sizing: border-box;
     padding-top: 10px;
-    .menu-item {
-        display: inline-block;
-        padding: 0 10px;
-        color: #fff;
-        height: 45px;
-        padding-top: 4px;
-    }
+}
+
+.menu-item {
+    display: inline-block;
+    padding: 0 10px;
+    color: #fff;
+    height: 45px;
+    padding-top: 4px;
+
+    border: 1px solid transparent;
 }

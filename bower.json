@@ -1,6 +1,6 @@
 {
-  "name": "Podio",
-  "version": "0.0.0",
+  "name": "Podio-Spaces",
+  "version": "0.0.1",
   "authors": [
     "Christian Bak <cbk@saxobank.com>"
   ],
@@ -14,8 +14,12 @@
     "tests"
   ],
   "dependencies": {
+    "jquery": null,
     "requirejs-text": "~2.0.12",
     "requirejs": "~2.1.14",
     "require-less": "~0.1.2"
+  },
+  "devDependencies": {
+    "almond": "~0.2.9"
   }
 }
