@@ -13,7 +13,7 @@ module.exports = function(grunt) {
                     ],
                     name: 'scripts/main',
                     out: 'built.js',
-                    optimize: 'none'
+                    optimize: 'uglify2'
                 }
             }
         }
