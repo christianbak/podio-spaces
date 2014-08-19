@@ -14,7 +14,7 @@
     border: 1px solid rgb(242, 242, 242);
     border-radius: 10px 10px 0px 0px;
 
-    transition: all @toggle-time ease-in;
+    //transition: all @toggle-time ease-in;
 
     &:after {
         content: '\FE3F';
@@ -27,28 +27,31 @@
         border-color: transparent;
         background: transparent;
         color: #fff;
+        &:after {
+            content: '\FE40';
+            top: 5px;
+        }
+         .container{
+            //opacity: 0;
+            visibility: hidden;
+        }
     }
 
-    &.collapsed:after {
-        content: '\FE40';
-        top: 5px;
+
+    .container {
+        position: absolute;
+        top: 45px;
+        left: -1px;
+        //transition: opacity @toggle-time ease-in;
+        //opacity: 1;
+        background: #fff;
+        box-shadow: 0px 2px 6px rgb(194,194,194);
+        border-radius: 0 0 5px 5px;
+
+        .results {
+            overflow: auto;
+        }
     }
-}
-
-.container {
-    position: absolute;
-    //max-height: 40%;
-    //overflow: auto;
-    transition: opacity @toggle-time ease-in;
-    opacity: 1;
-    background: #fff;
-    box-shadow: 0px 2px 6px rgb(194,194,194);
-    border-radius: 0 0 5px 5px;
-
-    .results {
-        overflow: auto;
-    }
-
 
     .search-wrapper {
         width: 100%;
@@ -65,10 +68,6 @@
         background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABfElEQVQ4T6XTv0tCQRwA8O/33o/oP2iptSAyCJR4PzKtpvaEtmpqaBXCpRbBPVyCCIIGCfoDKvU9vadIDuYSLUGO1RAVDfruOocnpr6wvO3uvve57919D2HEhiOuhz7AMFYNlNkOAJsEIA3WdE8otQp+G/0AdDO8ryhKkjFW58BqgDgnoTQv+od2PnswCOkAIV03FSLbIihBC1bSCw5HVuKImAIGa/n89XUv0gEW9aVTwiHgOPZCb5AZidxyhg9FK7vpDxhGjgA8OsXidh+wHD0mHGct60bzBTTdPAPAaYfaoQEZlEUGTyKDDV/AENfPUboSF7ZXooUjL1Azw7uqoqRZy43Zdi7jC7QnNMNMIZI4d7kD6NY4kgBBohMiDgd49/z1Eb2vVF67kb46CGnmugywJZ5wigE0OOeXErKEJKsz4jXqn+9v0Wq1+uIhQ1ViMBicUFQ1NwgZCmjv1o00W26mTO1Ye3xowEPksfE0cPeiROn5n4FfS/m/v/IbTC6PEd6JR7QAAAAASUVORK5CYII=) no-repeat 4px 6px;
     }
 
-    &.collapsed {
-        opacity: 0;
-    }
-
     a {
         font-size: 14px;
         text-decoration: none;
@@ -79,24 +78,22 @@
 
         border-left: 1px solid rgb(242, 242, 242);
 
-        transition: background-color .1s ease-in;
+        &.org { margin-top: 5px; margin-bottom: 5px; }
 
-        &:active, &:focus, &:hover {
+        &:active, &:focus, &:hover, &.active {
             background-color: rgb(230, 241, 249);
             outline: none;
-            transition: background-color .08s ease-out;
         }
 
         white-space: nowrap;
 
         &.hidden { display: none; }
     }
-
     div.org {
         padding: 0 0 0 50px;
         border: 1px solid rgb(242, 242, 242);
         border-bottom: none;
-        background: 10px 10px no-repeat;
+        background: 10px 5px no-repeat;
         background-size: 30px;
 
         a {
