@@ -1,4 +1,5 @@
 require.config({
+    baseUrl: '.',
     paths: {
         'jquery': 'bower_components/jquery/dist/jquery',
         text: 'bower_components/requirejs-text/text'
@@ -12,6 +13,6 @@ require.config({
     }
 });
 
-require(['jquery', 'spaces', 'text!data/spaces.json'], function($, spaces, data) {
+require(['jquery', 'scripts/spaces', 'text!data/spaces.json'], function($, spaces, data) {
     $('#space-demo').spaces(JSON.parse(data));
 });

@@ -1,6 +1,30 @@
+Bootstrap
+    As a developer, I want to have a place where I can build and test my component.
+    Tasks:
+        - Set up simple web app with a demo page to play around in.
+
 Show spaces
-    - Render spaces from JSON
+    As a simple Podio user, I want to see a list of spaces that I have access to
+    Tasks:
+    - Render markup for spaces and organizations from JSON
+    - Apply basic styling
+    - Toggle list on/off
 
 Filter spaces
+    As an advanced Podio user with many spaces, I want to be able to easily find the space I need.
+    Tasks:
+    - Add search box
+    - Filter inputs when user types in the search box
 
 Select using arrow keys
+    As an advanced Podio user, I want to have super fast access to switch between my spaces.
+    Tasks:
+    - Handle moving up/down with arrow-keys in space search results.
+    - Automatically return to search field when additional text is typed while navigating spaces.
+    - Handle default selection of first search result, so the user can just press enter when the desired spaces is found.
+
+Support scrolling on long lists
+    As a Podio user, I don't want to have my UI obscured by very long lists of spaces
+    Tasks:
+    - Ensure that search results do not extend beyond the visible window.
+    - Wrap search results in a scrollable div. Search input field should always be visible.

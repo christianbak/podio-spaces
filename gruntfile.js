@@ -5,12 +5,13 @@ module.exports = function(grunt) {
         requirejs: {
             optimizer: {
                 options: {
-                    mainConfigFile: 'main.js',
+                    baseUrl: '.',
+                    mainConfigFile: 'scripts/main.js',
                     exclude: [
                         'less',
                         'jquery'
                     ],
-                    name: 'main',
+                    name: 'scripts/main',
                     out: 'built.js',
                     optimize: 'none'
                 }
