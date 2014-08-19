@@ -1,0 +1,21 @@
+{
+  "name": "Podio",
+  "version": "0.0.0",
+  "authors": [
+    "Christian Bak <cbk@saxobank.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs-text": "~2.0.12",
+    "requirejs": "~2.1.14",
+    "require-less": "~0.1.2"
+  }
+}

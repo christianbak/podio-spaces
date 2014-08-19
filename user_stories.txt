@@ -1,0 +1,6 @@
+Show spaces
+    - Render spaces from JSON
+
+Filter spaces
+
+Select using arrow keys

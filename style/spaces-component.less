@@ -1,0 +1,116 @@
+@toggle-time: .1s;
+
+.menu .spaces-component {
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+    color: #000;
+    background: #fff;
+
+    position: relative;
+
+    border: 1px solid rgb(242, 242, 242);
+    border-radius: 10px 10px 0px 0px;
+
+    transition: all @toggle-time ease-in;
+
+    &:after {
+        content: '\FE3F';
+        margin-left: 8px;
+        position: relative;
+        top: -3px;
+    }
+
+    &.collapsed {
+        border-color: transparent;
+        background: transparent;
+        color: #fff;
+    }
+
+    &.collapsed:after {
+        content: '\FE40';
+        top: 5px;
+    }
+
+    .container {
+        position: absolute;
+        top: 100%;
+        left: -1px;
+        overflow: auto;
+        transition: opacity @toggle-time ease-in;
+        opacity: 1;
+        background: #fff;
+        box-shadow: 0px 2px 6px rgb(194,194,194);
+        border-radius: 0 0 5px 5px;
+    }
+
+    .search-wrapper {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+
+    input {
+        width: 100%;
+        box-sizing: border-box;
+        height: 27px;
+        border: none;
+        padding-left: 26px;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABfElEQVQ4T6XTv0tCQRwA8O/33o/oP2iptSAyCJR4PzKtpvaEtmpqaBXCpRbBPVyCCIIGCfoDKvU9vadIDuYSLUGO1RAVDfruOocnpr6wvO3uvve57919D2HEhiOuhz7AMFYNlNkOAJsEIA3WdE8otQp+G/0AdDO8ryhKkjFW58BqgDgnoTQv+od2PnswCOkAIV03FSLbIihBC1bSCw5HVuKImAIGa/n89XUv0gEW9aVTwiHgOPZCb5AZidxyhg9FK7vpDxhGjgA8OsXidh+wHD0mHGct60bzBTTdPAPAaYfaoQEZlEUGTyKDDV/AENfPUboSF7ZXooUjL1Azw7uqoqRZy43Zdi7jC7QnNMNMIZI4d7kD6NY4kgBBohMiDgd49/z1Eb2vVF67kb46CGnmugywJZ5wigE0OOeXErKEJKsz4jXqn+9v0Wq1+uIhQ1ViMBicUFQ1NwgZCmjv1o00W26mTO1Ye3xowEPksfE0cPeiROn5n4FfS/m/v/IbTC6PEd6JR7QAAAAASUVORK5CYII=) no-repeat 4px 6px;
+    }
+
+    &.collapsed .container{
+        opacity: 0;
+    }
+
+    a {
+        font-size: 14px;
+        text-decoration: none;
+        display: inline-block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 7px 10px 7px 10px;
+
+        border-left: 1px solid rgb(242, 242, 242);
+
+        transition: background-color .1s ease-in;
+
+        &:active, &:focus, &:hover {
+            background-color: rgb(230, 241, 249);
+            outline: none;
+            transition: background-color .08s ease-out;
+        }
+
+        white-space: nowrap;
+
+        &.hidden { display: none; }
+    }
+
+    div.org {
+        padding: 0 0 0 50px;
+        border: 1px solid rgb(242, 242, 242);
+        border-bottom: none;
+        background: 10px 10px no-repeat;
+        background-size: 30px;
+
+        a {
+            font-weight: bold;
+            color: rgb(60, 126, 175);
+        }
+    }
+
+    div.space {
+        margin: 0;
+
+        a {
+            padding-left: 20px;
+            font-weight: normal;
+            color: rgb(128, 128, 128);
+        }
+    }
+
+    em { background-color: yellow; }
+
+}
